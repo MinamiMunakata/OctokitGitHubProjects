@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">OctokitGitHubProjects</string>
+    <string name="org_name">octokit</string>
 </resources>
