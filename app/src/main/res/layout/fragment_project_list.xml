@@ -40,14 +40,12 @@
                 android:textSize="@dimen/project_header"
                 android:textStyle="bold" />
 
-            <androidx.recyclerview.widget.RecyclerView
+            <com.airbnb.epoxy.EpoxyRecyclerView
                 android:id="@+id/project_list"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:contentDescription="@string/project_list"
-                app:layoutManager="LinearLayoutManager"
-
-                />
+                app:layoutManager="LinearLayoutManager" />
 
 
         </LinearLayout>
