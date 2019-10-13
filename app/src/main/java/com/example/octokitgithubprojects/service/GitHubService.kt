@@ -8,5 +8,5 @@ import retrofit2.http.Path
 interface GitHubService {
     // Get the list of repositories
     @GET("/orgs/{org}/repos")
-    suspend fun getProjectList(@Path("user") user: String): Response<List<Project>>
+    suspend fun getProjectList(@Path("org") org: String): Response<List<Project>>
 }

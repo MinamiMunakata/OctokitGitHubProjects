@@ -8,7 +8,6 @@ import com.example.octokitgithubprojects.R
 import com.example.octokitgithubprojects.model.Project
 import com.example.octokitgithubprojects.repository.ProjectRepository
 import kotlinx.coroutines.launch
-import java.lang.Exception
 
 class ProjectListViewModel(application: Application) : AndroidViewModel(application) {
     private val repository = ProjectRepository.instance
@@ -22,7 +21,8 @@ class ProjectListViewModel(application: Application) : AndroidViewModel(applicat
         // The CoroutineScope is automatically cancelled when the ViewModel is cleared.: ViewModel.onCleared()
         viewModelScope.launch {
             try {
-                val request = repository.getProjectList(getApplication<Application>().getString(R.string.org_name))
+                val request =
+                    repository.getProjectList(getApplication<Application>().getString(R.string.org_name))
                 if (request.isSuccessful) {
                     projectListLiveData.postValue(request.body())
                 }

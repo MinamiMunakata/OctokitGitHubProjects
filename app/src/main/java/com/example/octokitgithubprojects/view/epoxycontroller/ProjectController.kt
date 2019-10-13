@@ -1,5 +1,6 @@
 package com.example.octokitgithubprojects.view.epoxycontroller
 
+import android.util.Log
 import com.airbnb.epoxy.AutoModel
 import com.airbnb.epoxy.TypedEpoxyController
 import com.example.octokitgithubprojects.databinding.ProjectListItemBinding
