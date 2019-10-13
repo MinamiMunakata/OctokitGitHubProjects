@@ -4,4 +4,5 @@
     <string name="loading_projects">Loading Projects …</string>
     <string name="octokit_github_projects">Octokit GitHub Projects</string>
     <string name="project_list">Project List</string>
+    <string name="project_name">Project Name</string>
 </resources>

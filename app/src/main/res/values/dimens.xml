@@ -2,4 +2,7 @@
 <resources>
     <dimen name="project_header">25sp</dimen>
     <dimen name="header_vertical_margin">20dp</dimen>
+    <dimen name="item_horizontal_margin">8dp</dimen>
+    <dimen name="item_padding">8dp</dimen>
+    <dimen name="project_name">16sp</dimen>
 </resources>
