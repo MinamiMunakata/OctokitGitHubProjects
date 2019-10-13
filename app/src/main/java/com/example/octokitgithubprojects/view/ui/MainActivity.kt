@@ -1,4 +1,4 @@
-package com.example.octokitgithubprojects.view
+package com.example.octokitgithubprojects.view.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
