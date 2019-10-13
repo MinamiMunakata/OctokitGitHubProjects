@@ -1,7 +1,8 @@
-package com.example.octokitgithubprojects
+package com.example.octokitgithubprojects.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.octokitgithubprojects.R
 
 class MainActivity : AppCompatActivity() {
 
