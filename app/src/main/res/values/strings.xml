@@ -1,9 +1,6 @@
 <resources>
     <string name="app_name">OctokitGitHubProjects</string>
     <string name="org_name">octokit</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="loading_projects">Loading Projects …</string>
     <string name="octokit_github_projects">Octokit GitHub Projects</string>
     <string name="project_list">Project List</string>
