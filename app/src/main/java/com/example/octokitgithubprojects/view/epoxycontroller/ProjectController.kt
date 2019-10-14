@@ -1,15 +1,12 @@
 package com.example.octokitgithubprojects.view.epoxycontroller
 
-import android.util.Log
-import com.airbnb.epoxy.AutoModel
 import com.airbnb.epoxy.TypedEpoxyController
-import com.example.octokitgithubprojects.databinding.ProjectListItemBinding
 import com.example.octokitgithubprojects.model.Project
 import com.example.octokitgithubprojects.projectListItem
 
-class ProjectController: TypedEpoxyController<List<Project>>() {
+class ProjectController : TypedEpoxyController<List<Project>>() {
     override fun buildModels(projectList: List<Project>?) {
-        // Elvis operator
+        // Elvis operator, Check if projectList is null
         projectList ?: return
         projectList.forEachIndexed { index, project ->
             projectListItem {
