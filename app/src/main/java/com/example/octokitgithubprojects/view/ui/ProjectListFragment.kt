@@ -31,6 +31,7 @@ class ProjectListFragment : Fragment() {
     private val projectClickCallback = object : ProjectClickCallback {
         override fun onClick(project: Project) {
             if (lifecycle.currentState.isAtLeast(Lifecycle.State.STARTED) && activity is MainActivity) {
+                // TODO:
                 Log.i("mTest-callback: ", "Success!")
             }
         }
@@ -43,18 +44,9 @@ class ProjectListFragment : Fragment() {
         // Inflate the layout for this fragment
         binding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_project_list, container, false)
-
-//        TODO: Adapter
         binding.apply {
-
-            //      TODO: Adapter
             isLoading = true
         }
-
-
-//        binding.projectList.setControllerAndBuildModels(ProjectController())
-
-        Log.i("mTest: ", "Show Fragment!")
         return binding.root
     }
 
@@ -68,12 +60,12 @@ class ProjectListFragment : Fragment() {
         viewModel.projectListLiveData.observe(viewLifecycleOwner, Observer { projects ->
             if (projects !=null) {
                 binding.isLoading = false
-                Log.i("mTest: ", "not NULL")
-//                TODO: Adapter
                 val controller = ProjectController()
                 binding.projectList.setController(controller)
-                controller.setData(projects)
+                controller.setData(projects, projectClickCallback)
             }
         })
     }
+
+
 }
