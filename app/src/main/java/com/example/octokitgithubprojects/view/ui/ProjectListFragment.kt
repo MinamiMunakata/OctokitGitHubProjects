@@ -5,7 +5,6 @@ import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkInfo
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -35,11 +34,12 @@ class ProjectListFragment : Fragment() {
     private val projectClickCallback = object : ProjectClickCallback {
         override fun onClick(project: Project) {
             if (isOnline()) {
+                // Show ReadmeFragment.
                 if (lifecycle.currentState.isAtLeast(Lifecycle.State.STARTED) && activity is MainActivity) {
                     (activity as MainActivity).showREADME(project)
-                    Log.i("mTest-callback: ", "Success!")
                 }
             } else {
+                // Display warning message.
                 val snackBar = Snackbar.make(
                     (activity as MainActivity).findViewById(android.R.id.content),
                     "There is no Internet connection",
@@ -47,8 +47,6 @@ class ProjectListFragment : Fragment() {
                 )
                 snackBar.show()
             }
-
-
         }
     }
 
@@ -82,6 +80,7 @@ class ProjectListFragment : Fragment() {
         })
     }
 
+    // Check if the device is online,
     private fun isOnline(): Boolean {
         val connectivityManager = activity?.getSystemService(Context.CONNECTIVITY_SERVICE)
         return if (connectivityManager is ConnectivityManager) {

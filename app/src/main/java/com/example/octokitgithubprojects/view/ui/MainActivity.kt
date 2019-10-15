@@ -18,10 +18,7 @@ class MainActivity : AppCompatActivity() {
                 .beginTransaction()
                 .add(R.id.fragment_container, fragment, TAG_OF_PROJECT_LIST_FRAGMENT)
                 .commit()
-
         }
-
-
     }
 
     fun showREADME(project: Project) {
