@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/minami_munakata/AndroidStudioProjects/OctokitGitHubProjects/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/project_list_item.xml",
+        "source": "/Users/minami_munakata/AndroidStudioProjects/OctokitGitHubProjects/app/src/main/res/layout/project_list_item.xml"
+    },
+    {
+        "merged": "/Users/minami_munakata/AndroidStudioProjects/OctokitGitHubProjects/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_project_list.xml",
+        "source": "/Users/minami_munakata/AndroidStudioProjects/OctokitGitHubProjects/app/src/main/res/layout/fragment_project_list.xml"
+    }
+]

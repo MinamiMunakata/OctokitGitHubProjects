@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                        
+
+    
+
+                 
+                            
+                             
+           
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" android:tag="layout/fragment_project_list_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <TextView
+            android:id="@+id/loading_projects"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="@string/loading_projects"
+            android:textAlignment="center"
+            android:tag="binding_1"        />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:tag="binding_2"        >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/header_vertical_margin"
+                android:layout_marginBottom="@dimen/header_vertical_margin"
+                android:gravity="center_horizontal"
+                android:text="@string/octokit_github_projects"
+                android:textAlignment="center"
+                android:textSize="@dimen/project_header"
+                android:textStyle="bold" />
+
+            <com.airbnb.epoxy.EpoxyRecyclerView
+                android:id="@+id/project_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/project_list"
+                app:layoutManager="LinearLayoutManager" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+         
