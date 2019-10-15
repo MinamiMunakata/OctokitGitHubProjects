@@ -5,4 +5,5 @@
     <string name="octokit_github_projects">Octokit GitHub Projects</string>
     <string name="project_list">Project List</string>
     <string name="project_name">Project Name</string>
+    <string name="loading_readme">Loading README</string>
 </resources>

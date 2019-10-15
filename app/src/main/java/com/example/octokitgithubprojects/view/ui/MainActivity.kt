@@ -1,8 +1,9 @@
 package com.example.octokitgithubprojects.view.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.octokitgithubprojects.R
+import com.example.octokitgithubprojects.model.Project
 
 class MainActivity : AppCompatActivity() {
 
@@ -11,6 +12,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         if (savedInstanceState == null) {
+            // Display the ProjectListFragment
             val fragment = ProjectListFragment()
             supportFragmentManager
                 .beginTransaction()
@@ -18,5 +20,18 @@ class MainActivity : AppCompatActivity() {
                 .commit()
 
         }
+
+
+    }
+
+    fun showREADME(project: Project) {
+        // Pass GitHub URL
+        val readmeFragment = ReadmeFragment.forReadme(project.html_url)
+
+        supportFragmentManager
+            .beginTransaction()
+            .addToBackStack("project")
+            .replace(R.id.fragment_container, readmeFragment, null)
+            .commit()
     }
 }

@@ -1,6 +1,9 @@
 package com.example.octokitgithubprojects.view.ui
 
 
+import android.content.Context
+import android.net.ConnectivityManager
+import android.net.NetworkInfo
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -17,6 +20,7 @@ import com.example.octokitgithubprojects.model.Project
 import com.example.octokitgithubprojects.view.callback.ProjectClickCallback
 import com.example.octokitgithubprojects.view.epoxycontroller.ProjectController
 import com.example.octokitgithubprojects.viewmodel.ProjectListViewModel
+import com.google.android.material.snackbar.Snackbar
 
 const val TAG_OF_PROJECT_LIST_FRAGMENT = "ProjectListFragment"
 
@@ -30,10 +34,21 @@ class ProjectListFragment : Fragment() {
 
     private val projectClickCallback = object : ProjectClickCallback {
         override fun onClick(project: Project) {
-            if (lifecycle.currentState.isAtLeast(Lifecycle.State.STARTED) && activity is MainActivity) {
-                // TODO:
-                Log.i("mTest-callback: ", "Success!")
+            if (isOnline()) {
+                if (lifecycle.currentState.isAtLeast(Lifecycle.State.STARTED) && activity is MainActivity) {
+                    (activity as MainActivity).showREADME(project)
+                    Log.i("mTest-callback: ", "Success!")
+                }
+            } else {
+                val snackBar = Snackbar.make(
+                    (activity as MainActivity).findViewById(android.R.id.content),
+                    "There is no Internet connection",
+                    Snackbar.LENGTH_SHORT
+                )
+                snackBar.show()
             }
+
+
         }
     }
 
@@ -56,15 +71,23 @@ class ProjectListFragment : Fragment() {
         observeViewModel(viewModel)
     }
 
-    private fun observeViewModel(viewModel: ProjectListViewModel){
+    private fun observeViewModel(viewModel: ProjectListViewModel) {
         viewModel.projectListLiveData.observe(viewLifecycleOwner, Observer { projects ->
-            if (projects !=null) {
+            if (projects != null) {
                 binding.isLoading = false
                 val controller = ProjectController()
                 binding.projectList.setController(controller)
                 controller.setData(projects, projectClickCallback)
             }
         })
+    }
+
+    private fun isOnline(): Boolean {
+        val connectivityManager = activity?.getSystemService(Context.CONNECTIVITY_SERVICE)
+        return if (connectivityManager is ConnectivityManager) {
+            val networkInfo: NetworkInfo? = connectivityManager.activeNetworkInfo
+            networkInfo?.isConnected ?: false
+        } else false
     }
 
 
