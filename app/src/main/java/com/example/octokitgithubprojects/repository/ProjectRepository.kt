@@ -1,6 +1,7 @@
 package com.example.octokitgithubprojects.repository
 
 import com.example.octokitgithubprojects.model.Project
+import com.example.octokitgithubprojects.model.Readme
 import com.example.octokitgithubprojects.service.GitHubService
 import retrofit2.Response
 import retrofit2.Retrofit
@@ -19,6 +20,8 @@ class ProjectRepository {
 
     // HTTP request returns the list of repositories.
     suspend fun getProjectList(userId: String): Response<List<Project>> = gitHubService.getProjectList(userId)
+
+    suspend fun getProjectREADME(userId: String, projectName: String): Response<Readme> = gitHubService.getReadme(userId, projectName)
 
     // Return the singleton ProjectRepository instance.
     companion object Factory {
