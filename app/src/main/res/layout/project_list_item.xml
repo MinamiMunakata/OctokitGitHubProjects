@@ -6,7 +6,7 @@
 
         <variable
             name="project"
-            type="com.example.octokitgithubprojects.model.Project" />
+            type="com.example.octokitgithubprojects.data.model.Project" />
 
         <variable
             name="callback"

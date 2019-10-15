@@ -1,7 +1,7 @@
 package com.example.octokitgithubprojects.view.epoxycontroller
 
 import com.airbnb.epoxy.Typed2EpoxyController
-import com.example.octokitgithubprojects.model.Project
+import com.example.octokitgithubprojects.data.model.Project
 import com.example.octokitgithubprojects.projectListItem
 import com.example.octokitgithubprojects.view.callback.ProjectClickCallback
 

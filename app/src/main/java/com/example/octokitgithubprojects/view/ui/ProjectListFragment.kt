@@ -15,7 +15,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.octokitgithubprojects.R
 import com.example.octokitgithubprojects.databinding.FragmentProjectListBinding
-import com.example.octokitgithubprojects.model.Project
+import com.example.octokitgithubprojects.data.model.Project
 import com.example.octokitgithubprojects.view.callback.ProjectClickCallback
 import com.example.octokitgithubprojects.view.epoxycontroller.ProjectController
 import com.example.octokitgithubprojects.viewmodel.ProjectListViewModel

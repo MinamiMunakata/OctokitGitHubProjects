@@ -1,7 +1,7 @@
 package com.example.octokitgithubprojects.repository
 
-import com.example.octokitgithubprojects.model.Project
-import com.example.octokitgithubprojects.service.GitHubService
+import com.example.octokitgithubprojects.data.model.Project
+import com.example.octokitgithubprojects.data.service.GitHubService
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -15,7 +15,8 @@ class ProjectRepository {
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
-    private var gitHubService: GitHubService = retrofit.create(GitHubService::class.java)
+    private var gitHubService: GitHubService = retrofit.create(
+        GitHubService::class.java)
 
     // HTTP request returns the list of repositories.
     suspend fun getProjectList(userId: String): Response<List<Project>> =

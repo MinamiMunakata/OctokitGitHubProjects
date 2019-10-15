@@ -1,6 +1,6 @@
-package com.example.octokitgithubprojects.service
+package com.example.octokitgithubprojects.data.service
 
-import com.example.octokitgithubprojects.model.Project
+import com.example.octokitgithubprojects.data.model.Project
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path

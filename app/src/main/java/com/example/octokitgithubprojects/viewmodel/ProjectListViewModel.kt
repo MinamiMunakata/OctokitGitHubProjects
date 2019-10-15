@@ -5,7 +5,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.octokitgithubprojects.R
-import com.example.octokitgithubprojects.model.Project
+import com.example.octokitgithubprojects.data.model.Project
 import com.example.octokitgithubprojects.repository.ProjectRepository
 import kotlinx.coroutines.launch
 

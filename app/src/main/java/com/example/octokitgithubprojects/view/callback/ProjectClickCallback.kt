@@ -1,6 +1,6 @@
 package com.example.octokitgithubprojects.view.callback
 
-import com.example.octokitgithubprojects.model.Project
+import com.example.octokitgithubprojects.data.model.Project
 
 
 /**

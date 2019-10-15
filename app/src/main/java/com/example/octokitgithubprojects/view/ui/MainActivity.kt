@@ -3,7 +3,7 @@ package com.example.octokitgithubprojects.view.ui
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.octokitgithubprojects.R
-import com.example.octokitgithubprojects.model.Project
+import com.example.octokitgithubprojects.data.model.Project
 
 class MainActivity : AppCompatActivity() {
 
